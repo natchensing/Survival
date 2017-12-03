@@ -1,2 +1,2 @@
 # Survival
-A prophesy of the future
+A prophecy of the future
