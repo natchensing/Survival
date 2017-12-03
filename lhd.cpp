@@ -83,69 +83,68 @@ void gameplay(int i) {
     // to clear settings
     answer = 0;
     next = 0;
-
-	switch (i)
-	{
-		case 1:
-			s = "One sunny morning, you wake up to sounds of your sister yelling and shouting at you: /Annie: \'Wake up sleepy head! Let\'s go outside today! Mom and Dad left early and it\'s sunny! We haven\'t had sun for so long!\' /You: \'Mmmmm... I\'m still sleeping. Did you have breakfast yet?\' /Annie: \'No, I\'m hungry! Can you make breakfast so we can go outside to play?\'";
-	        	printPara(s);
-			cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. \'No, go make your own breakfast.\' \n2. \'Fine... I\'ll be downstairs in a minute. What do you want for breakfast?\' \n3. \'Zzzzzz.\'\n";
-			cin >> answer;
-			next = next_case(answer,2,3,2);
-			gameplay(next);
-			break;
-		case 2:
-			s = "You snuggle up in the covers and go back to sleep. /Morning turns to noon and you finally get up, heading downstairs only to see Annie outside on the porch running around. /Not a blade of green is to be seen. /You haven\'t seen anything living aside from your family and the cockroaches under the broken sink. /You: \'Annie! Come back inside. I\'ll make you your breakfast.\' /Annie: \'Thanks! But I already ate! I had toast and jam!\'";
-			printPara(s);
-			gameplay(5);
-			break;
-		case 3:
-			s = "You head downstairs and see Annie sitting eagerly at the kitchen table waiting for you. /Breakfast consisted of scrambled eggs and french toast and you both gobble it down. /Annie: \'Can we go outside now? I wanna play with Mr. Sunshine today!\'";
-			printPara(s);
-			cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. \'Sure, let\'s go!\' \n2. \'You go ahead, I\'ll watch from the porch.\' \n3. \'Alright, I\'ll be inside.\'\n";
-			next = next_case(answer,1,1,4);
-			gameplay(next);
-			break;
-		case 4:
-			s = "You head to the living room, opening the broken blinds and making yourself comfortable on the couch.";
-			gameplay(6);
-			break;
-		case 5: 
-			s = "Shrugging, you enter the kitchen at the back of the house to make yourself breakfast. /Cracking the last egg into a frying pan you proceed to make some scrambled eggs and french toast.";
-			printPara(s);
-			gameplay(6);
-			break;
-		case 6:
-			s = "Suddenly, you hear Annie\'s scream out in front. /You drop every in your hands and run towards the front of the house, grabbing your trusted rifle along the way. /Your eyes widen in horror as you see two young adults dragging Annie away who has a gag in her mouth and her hands tied behind her back, struggling.";
-			cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. Run out and shout \'Let go of my sister!\'. \n2. Silently try to shoot one of the kidnappers. \n3. Calmly walk outside and try to talk with the kidnappers.\n";
-			cin >> answer;
-			next = next_case(answer,7,1,1);
-			gameplay(next);
-			break;
-		case 7:
-			s = "You run as fast as you can towards the trio. /However, one of them reacts fast enough to take out his gun and points it at you while the other grabs Annie and puts her in a choke hold. /\'Stop right there!\'' Kidnapper 1 says./You freeze, unsure of what to do. \'I don’t know who you think you are, but let go of my sister!\'";
-			if (you.gender == "b") {
-				gameplay(8);
-			} else gameplay(9);
-			break;
-		case 8: 
-			s = "\'Aw, look at the big boy who\'s coming to save his precious little sis.\' Kidnapper 1 says. /You point the gun to him. /\'Let go of my sister.\'' You say./\'Don\'t you point that big thing at me boy, shoot me and your sister\'s dead.\'' He says, pointing the gun at Annie./";
-			cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. Lower your gun \n2. Shoot Kidnapper 1 who has Annie\n3.Shoot Kidnapper 2 who’s pointing the gun at you\n";
-			cin >> answer;
-			next = next_case(answer,10,1,1);
-			gameplay(next);
-			break;
-		case 9:
-		case 10:
-			s = "\'Well, we have no use for a scrawny guy like you, so off you go.\'' Kidnapper 2 says. /You tense. He pulls the trigger and you collapse on the ground. /You drift off into darkness while you hear Annie screaming :";
-			printPara(s);
-			entertc();
-			cout << "\'" << you.name  << "\'!"<< endl; 
-			cout << "GAME OVER." << endl;
-			break;
-		default: cout << "Dev use: This is not a scenario of the game! \n";
+    switch (i) {
+	case 1:
+		s = "One sunny morning, you wake up to sounds of your sister yelling and shouting at you: /Annie: \'Wake up sleepy head! Let\'s go outside today! Mom and Dad left early and it\'s sunny! We haven\'t had sun for so long!\' /You: \'Mmmmm... I\'m still sleeping. Did you have breakfast yet?\' /Annie: \'No, I\'m hungry! Can you make breakfast so we can go outside to play?\'";
+        	printPara(s);
+		cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. \'No, go make your own breakfast.\' \n2. \'Fine... I\'ll be downstairs in a minute. What do you want for breakfast?\' \n3. \'Zzzzzz.\'\n";
+		cin >> answer;
+		next = next_case(answer,2,3,2);
+		gameplay(next);
 		break;
-	}
+	case 2:
+		s = "You snuggle up in the covers and go back to sleep. /Morning turns to noon and you finally get up, heading downstairs only to see Annie outside on the porch running around. /Not a blade of green is to be seen. /You haven\'t seen anything living aside from your family and the cockroaches under the broken sink. /You: \'Annie! Come back inside. I\'ll make you your breakfast.\' /Annie: \'Thanks! But I already ate! I had toast and jam!\'";
+		printPara(s);
+		gameplay(5);
+		break;
+	case 3:
+		s = "You head downstairs and see Annie sitting eagerly at the kitchen table waiting for you. /Breakfast consisted of scrambled eggs and french toast and you both gobble it down. /Annie: \'Can we go outside now? I wanna play with Mr. Sunshine today!\'";
+		printPara(s);
+		cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. \'Sure, let\'s go!\' \n2. \'You go ahead, I\'ll watch from the porch.\' \n3. \'Alright, I\'ll be inside.\'\n";
+		next = next_case(answer,1,1,4);
+		gameplay(next);
+		break;
+	case 4:
+		s = "You head to the living room, opening the broken blinds and making yourself comfortable on the couch.";
+		gameplay(6);
+		break;
+	case 5: 
+		s = "Shrugging, you enter the kitchen at the back of the house to make yourself breakfast. /Cracking the last egg into a frying pan you proceed to make some scrambled eggs and french toast.";
+		printPara(s);
+		gameplay(6);
+		break;
+	case 6:
+		s = "Suddenly, you hear Annie\'s scream out in front. /You drop every in your hands and run towards the front of the house, grabbing your trusted rifle along the way. /Your eyes widen in horror as you see two young adults dragging Annie away who has a gag in her mouth and her hands tied behind her back, struggling.";
+		cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. Run out and shout \'Let go of my sister!\'. \n2. Silently try to shoot one of the kidnappers. \n3. Calmly walk outside and try to talk with the kidnappers.\n";
+		cin >> answer;
+		next = next_case(answer,7,1,1);
+		gameplay(next);
+		break;
+	case 7:
+		s = "You run as fast as you can towards the trio. /However, one of them reacts fast enough to take out his gun and points it at you while the other grabs Annie and puts her in a choke hold. /\'Stop right there!\'' Kidnapper 1 says./You freeze, unsure of what to do. \'I don’t know who you think you are, but let go of my sister!\'";
+		if (you.gender == "b") {
+			gameplay(8);
+		} else gameplay(9);
+		break;
+	case 8: 
+		s = "\'Aw, look at the big boy who\'s coming to save his precious little sis.\' Kidnapper 1 says. /You point the gun to him. /\'Let go of my sister.\'' You say./\'Don\'t you point that big thing at me boy, shoot me and your sister\'s dead.\'' He says, pointing the gun at Annie./";
+		cout << "WHAT DO YOU DO? \nOPTIONS (choose 1, 2, or 3): \n1. Lower your gun \n2. Shoot Kidnapper 1 who has Annie\n3.Shoot Kidnapper 2 who’s pointing the gun at you\n";
+		cin >> answer;
+		next = next_case(answer,10,1,1);
+		gameplay(next);
+		break;
+	case 9:
+	case 10:
+		s = "\'Well, we have no use for a scrawny guy like you, so off you go.\'' Kidnapper 2 says. /You tense. He pulls the trigger and you collapse on the ground. /You drift off into darkness while you hear Annie screaming :";
+		printPara(s);
+		entertc();
+		cout << "\'" << you.name  << "\'!"<< endl; 
+		entertc();
+		cout << "GAME OVER." << endl;
+		break;
+	default: cout << "Dev use: This is not a scenario of the game! \n";
+	break;
+    }
 }
 
 
